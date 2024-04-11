@@ -47,6 +47,18 @@ This project is a RESTful API built using Node.js, Express.js, MySQL, JWT authen
    npm test
    ```
 
+## Environment Configuration
+Before running the application, make sure to set up your environment variables. You can create a .env file in the root directory of your project and add the following variables:
+
+```
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=Aryan@123
+DB_DATABASE=algo8
+
+JWT_SECRET_KEY=your_secret_key
+```
+Make sure to replace your_secret_key with your desired secret key for JWT token encryption.
 ## Usage
 
 - **Signup**: Register a new user by making a POST request to `/signup` endpoint with username, password, and name in the request body.
