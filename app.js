@@ -2,19 +2,21 @@ const express= require("express");
 const mysql = require("mysql");
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
+require("dotenv").config()
 
 
 const app= express();
 
 // JWT Secret key
-const JWT_SECRET = 'your_secret_key';
+const JWT_SECRET = process.env.JWT_SECRET_KEY;
 
 const connection= mysql.createConnection({
-    host:"localhost",
-    user:"root",
-    password:"Aryan@123",
-    database:"algo8",
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE,
 })
+
 connection.connect(function(err){
     if(err) throw err;
     console.log("The Database has been connected")
